@@ -1,0 +1,3 @@
+[submodule "LD51/Assets/Plugins/UnityLibrary"]
+	path = LD51/Assets/Plugins/UnityLibrary
+	url = https://github.com/Erkberg/UnityLibrary.git
