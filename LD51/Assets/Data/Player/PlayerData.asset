@@ -15,3 +15,6 @@ MonoBehaviour:
   baseMoveSpeed: 3.33
   dashMultiplier: 16
   dashDuration: 0.133
+  playerAreaCoolDown: 2
+  playerAreaDuration: 0.67
+  playerAreaSize: 4

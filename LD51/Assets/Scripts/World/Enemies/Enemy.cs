@@ -17,5 +17,10 @@ namespace LD51
         {
             player = Game.inst.refs.player;
         }
+
+        public void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace LD51
 
         public void OnEnterPlayerArea()
         {
-
+            enemy.Die();
         }
     }
 }
