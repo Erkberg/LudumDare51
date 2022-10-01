@@ -40,11 +40,13 @@ namespace LD51
 
         private void Trigger()
         {
+            Game.inst.refs.screenshake.StartShake(0.133f, 0.133f);
             StartCoroutine(TriggerSequence());
         }
 
         public void SuperTrigger()
         {
+            Game.inst.refs.screenshake.StartShake(0.25f, 0.2f);
             cooldownPassed = 0f;
             StopAllCoroutines();
             StartCoroutine(TriggerSequence(true));
@@ -56,7 +58,7 @@ namespace LD51
             transform.SetScale(0f);
             float timePassed = 0f;
             float duration = superTrigger ? 1.33f : data.playerData.playerAreaDuration;
-            float size = superTrigger ? 32f : data.playerData.playerAreaSize;
+            float size = superTrigger ? 32f : data.playerData.playerAreaSize;            
 
             while (timePassed < data.playerData.playerAreaDuration)
             {

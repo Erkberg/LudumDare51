@@ -53,6 +53,7 @@ namespace LD51
         {
             isDashing = true;
             coll.enabled = false;
+            Game.inst.refs.screenshake.StartShake(0.033f, 0.033f);
 
             float durationPassed = 0f;
             while(rb2d.velocity.magnitude > 0f && durationPassed < data.playerData.dashDuration)

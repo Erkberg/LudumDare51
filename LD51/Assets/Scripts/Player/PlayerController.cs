@@ -15,6 +15,7 @@ namespace LD51
 
         public void OnEnterEnemy()
         {
+            Game.inst.refs.screenshake.StartShake(0.1f, 0.1f);
             health--;
             Game.inst.ui.SetHealth(health);
             anim.OnHit();
