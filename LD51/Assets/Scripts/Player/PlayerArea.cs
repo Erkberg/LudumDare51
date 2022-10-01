@@ -12,6 +12,7 @@ namespace LD51
         public PlayerController pc;
         public Collider2D coll;
         public SpriteRenderer spriteRenderer;
+        public ParticleSystem particle;
 
         private GameData data;
         private float cooldownPassed;
@@ -29,6 +30,12 @@ namespace LD51
         private void Update()
         {
             Timing.AddTimeAndCheckMax(ref cooldownPassed, data.playerData.playerAreaCoolDown, Time.deltaTime, Trigger);
+            AdjustParticle();
+        }
+
+        private void AdjustParticle()
+        {
+            particle.SetEmissionOverTime(3.33f * cooldownPassed / data.playerData.playerAreaCoolDown);
         }
 
         private void Trigger()
