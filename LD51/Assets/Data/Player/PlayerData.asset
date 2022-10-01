@@ -17,4 +17,4 @@ MonoBehaviour:
   dashDuration: 0.133
   playerAreaCoolDown: 10
   playerAreaDuration: 0.67
-  playerAreaSize: 4
+  playerAreaSize: 3

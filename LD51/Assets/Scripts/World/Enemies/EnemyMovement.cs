@@ -12,7 +12,10 @@ namespace LD51
 
         private void Update()
         {
-            Move();
+            if(!rb2d.isKinematic)
+            {
+                Move();
+            }            
         }
 
         protected virtual void Move() 
@@ -37,6 +40,12 @@ namespace LD51
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
+        }
+
+        public void OnDeath()
+        {
+            rb2d.isKinematic = true;
+            rb2d.velocity = Vector2.zero;
         }
     }
 }

@@ -23,5 +23,10 @@ namespace LD51
         {
             return controls.Player.Dash.WasPressedThisFrame();
         }
+
+        public bool GetCheat()
+        {
+            return controls.Player.Cheat.IsPressed();
+        }
     }
 }

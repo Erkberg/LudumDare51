@@ -20,7 +20,16 @@ namespace LD51
 
         public void Die()
         {
+            StartCoroutine(DeathSequence());            
+        }
+
+        private IEnumerator DeathSequence()
+        {
             Game.inst.progress.OnEnemyDied();
+            Game.inst.effects.EmitHearticleAtPosition(move.transform.position);
+            anim.OnDeath();
+            move.OnDeath();
+            yield return new WaitForSeconds(1.33f);
             Destroy(gameObject);
         }
     }

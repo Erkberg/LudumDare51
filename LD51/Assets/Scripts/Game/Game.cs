@@ -14,6 +14,7 @@ namespace LD51
         public GameData data;
         public GameRefs refs;
         public GameProgress progress;
+        public GameEffects effects;
         public new GameAudio audio;
 
         private void Awake()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5597924326297021465}
   - component: {fileID: 5597924326297021444}
+  - component: {fileID: 13716480798377507}
   - component: {fileID: 5597924326297021447}
   - component: {fileID: 5597924326297021446}
   m_Layer: 0
@@ -46,6 +47,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ea30946b9bbb8429fc0044ca10b454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5597924326297021446}
+  animator: {fileID: 5597924326297021447}
+  fadeSprite: {fileID: 13716480798377507}
+--- !u!114 &13716480798377507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597924326297021464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1cfe0c5414c8b49930b14b63991c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5597924326297021446}
 --- !u!95 &5597924326297021447
 Animator:
   serializedVersion: 4
@@ -108,7 +125,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: a7f10c0d5e8c6894e8a7fa5e652bd122, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.64705884, g: 0.18823531, b: 0.18823531, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5597924327419213465}
+  coll: {fileID: 3822180457009634973}
 --- !u!50 &5597924326813120522
 Rigidbody2D:
   serializedVersion: 4
