@@ -13,6 +13,7 @@ namespace LD51
         public GameUI ui;
         public GameData data;
         public GameRefs refs;
+        public GameProgress progress;
         public new GameAudio audio;
 
         private void Awake()
