@@ -14,6 +14,7 @@ namespace LD51
             if(enemy)
             {
                 pc.OnEnterEnemy();
+                Destroy(enemy.enemy.gameObject);
             }
         }
     }

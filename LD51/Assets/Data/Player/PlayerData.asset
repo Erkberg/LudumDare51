@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   baseMoveSpeed: 3.33
-  dashMultiplier: 16
+  dashMultiplier: 18
   dashDuration: 0.133
   playerAreaCoolDown: 10
   playerAreaDuration: 0.67

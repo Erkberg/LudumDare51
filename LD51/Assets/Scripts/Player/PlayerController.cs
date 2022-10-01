@@ -10,9 +10,18 @@ namespace LD51
         public PlayerInteraction interact;
         public PlayerAnimation anim;
 
+        public int health = 3;
+
         public void OnEnterEnemy()
         {
-            Die();
+            health--;
+            Game.inst.ui.SetHealth(health);
+            anim.OnHit();
+
+            if(health <= 0)
+            {
+                Die();
+            }            
         }
 
         private void Die()

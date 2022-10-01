@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc386fb1b1587644aa4940bc58beba0b, type: 3}
   m_Name: LevelData_01
   m_EditorClassIdentifier: 
-  spawnTime: 1.67
-  enemiesToNextLevel: 16
+  spawnTime: 1.33
+  enemiesToNextLevel: 8
   enemyTypes: 01000000

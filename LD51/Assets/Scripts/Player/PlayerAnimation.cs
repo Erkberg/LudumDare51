@@ -10,6 +10,7 @@ namespace LD51
         public PlayerController pc;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
+        public FlickerRenderers flickerRenderers;
 
         private void Update()
         {
@@ -19,6 +20,11 @@ namespace LD51
         private void CheckInvincible()
         {
             spriteRenderer.SetColorA(pc.move.IsInvincible() ? 0.167f : 1f);
+        }
+
+        public void OnHit()
+        {
+            flickerRenderers.StartFlicker(0.33f);
         }
     }
 }
