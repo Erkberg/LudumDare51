@@ -6,16 +6,15 @@ namespace LD51
 {
     public class PlayerInteraction : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public PlayerController pc;
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-        
+            EnemyInteraction enemy = collision.GetComponent<EnemyInteraction>();
+            if(enemy)
+            {
+                pc.OnEnterEnemy();
+            }
         }
     }
 }

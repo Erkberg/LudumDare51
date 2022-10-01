@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LD51
 {
@@ -11,11 +12,17 @@ namespace LD51
         public GameInput input;
         public GameUI ui;
         public GameData data;
+        public GameRefs refs;
         public new GameAudio audio;
 
         private void Awake()
         {
             inst = this;
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

@@ -6,16 +6,16 @@ namespace LD51
 {
     public class Enemy : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public EnemyData data;
+        public EnemyMovement move;
+        public EnemyInteraction interact;
+        public EnemyAnimation anim;
 
-        // Update is called once per frame
-        void Update()
+        public PlayerController player;
+
+        private void Awake()
         {
-        
+            player = Game.inst.refs.player;
         }
     }
 }
