@@ -9,6 +9,7 @@ namespace LD51
         public PlayerMovement move;
         public PlayerInteraction interact;
         public PlayerAnimation anim;
+        public PlayerArea area;
 
         public int health = 3;
 

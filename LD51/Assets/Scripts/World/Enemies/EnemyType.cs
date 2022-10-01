@@ -10,6 +10,7 @@ namespace LD51
         Follow,
         Shoot,
         Bullet,
-        ShootWide
+        ShootWide,
+        Boss
     }
 }

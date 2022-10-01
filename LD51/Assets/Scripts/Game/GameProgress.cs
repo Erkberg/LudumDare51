@@ -7,6 +7,7 @@ namespace LD51
     public class GameProgress : MonoBehaviour
     {
         public int currentLevel = 0;
+        public bool betweenLevels;
 
         private int currentLevelEnemiesDied;
 
@@ -17,13 +18,26 @@ namespace LD51
 
         public void OnEnemyDied()
         {
+            if (betweenLevels)
+                return;
+
             currentLevelEnemiesDied++;
             if(currentLevelEnemiesDied >= GetCurrentLevelData().enemiesToNextLevel)
             {
-                currentLevelEnemiesDied = 0;
-                currentLevel++;
+                StartCoroutine(LevelChangeSequence());   
             }
             Game.inst.ui.SetProgress((float)currentLevelEnemiesDied / GetCurrentLevelData().enemiesToNextLevel);
+        }
+
+        private IEnumerator LevelChangeSequence()
+        {
+            betweenLevels = true;
+            currentLevelEnemiesDied = 0;
+            currentLevel++;
+            Game.inst.refs.player.area.SuperTrigger();
+            yield return new WaitForSeconds(1.67f);
+            currentLevelEnemiesDied = 0;
+            betweenLevels = false;
         }
     }
 }

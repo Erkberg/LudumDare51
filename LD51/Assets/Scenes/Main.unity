@@ -699,6 +699,7 @@ MonoBehaviour:
   move: {fileID: 150429150}
   interact: {fileID: 150429151}
   anim: {fileID: 2143229024}
+  area: {fileID: 527244137}
   health: 3
 --- !u!1 &473338376
 GameObject:
@@ -2083,6 +2084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 0
+  betweenLevels: 0
 --- !u!4 &1760918844
 Transform:
   m_ObjectHideFlags: 0

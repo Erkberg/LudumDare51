@@ -45,6 +45,8 @@ namespace LD51
 
         public void SuperTrigger()
         {
+            cooldownPassed = 0f;
+            StopAllCoroutines();
             StartCoroutine(TriggerSequence(true));
         }
 
@@ -53,10 +55,13 @@ namespace LD51
             coll.enabled = true;
             transform.SetScale(0f);
             float timePassed = 0f;
-            while(timePassed < data.playerData.playerAreaDuration)
+            float duration = superTrigger ? 1.33f : data.playerData.playerAreaDuration;
+            float size = superTrigger ? 32f : data.playerData.playerAreaSize;
+
+            while (timePassed < data.playerData.playerAreaDuration)
             {
-                float percentage = timePassed / data.playerData.playerAreaDuration;
-                float scale = data.playerData.playerAreaSize * baseScale * percentage;
+                float percentage = timePassed / duration;
+                float scale = size * baseScale * percentage;
                 spriteRenderer.SetColorA(1f - percentage);
                 transform.SetScale(scale);
                 timePassed += Time.deltaTime;

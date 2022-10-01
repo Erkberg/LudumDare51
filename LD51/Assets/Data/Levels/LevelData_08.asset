@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc386fb1b1587644aa4940bc58beba0b, type: 3}
-  m_Name: LevelData_02
+  m_Name: LevelData_08
   m_EditorClassIdentifier: 
   spawnTime: 3.33
-  enemiesToNextLevel: 6
-  enemyTypes: 02000000
+  enemiesToNextLevel: 1
+  enemyTypes: 05000000

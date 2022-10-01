@@ -21,7 +21,10 @@ namespace LD51
 
         private void Update()
         {
-            CheckSpawn();
+            if(!progress.betweenLevels)
+            {
+                CheckSpawn();
+            }            
         }
 
         private void CheckSpawn()
