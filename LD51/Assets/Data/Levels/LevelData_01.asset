@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: LevelData_01
   m_EditorClassIdentifier: 
   spawnTime: 1.67
+  enemiesToNextLevel: 16
   enemyTypes: 01000000

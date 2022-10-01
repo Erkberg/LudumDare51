@@ -20,6 +20,7 @@ namespace LD51
 
         public void Die()
         {
+            Game.inst.progress.OnEnemyDied();
             Destroy(gameObject);
         }
     }

@@ -9,6 +9,7 @@ namespace LD51
     public class LevelData : ScriptableObject
     {
         public float spawnTime = 3.33f;
+        public int enemiesToNextLevel = 8;
         public List<EnemyType> enemyTypes;
 
         public EnemyType GetRandomEnemyType()

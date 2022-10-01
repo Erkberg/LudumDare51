@@ -1,21 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LD51
 {
     public class GameUI : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public Image progressImage;
 
-        // Update is called once per frame
-        void Update()
+        public void SetProgress(float value)
         {
-        
+            progressImage.fillAmount = value;
         }
     }
 }
