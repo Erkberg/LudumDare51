@@ -12,7 +12,7 @@ namespace LD51
 
         private void Update()
         {
-            if(!rb2d.isKinematic)
+            if(!enemy.isDying)
             {
                 Move();
             }            
@@ -26,11 +26,27 @@ namespace LD51
                     break;
 
                 case EnemyType.Follow:
-                    Vector2 dir = enemy.player.GetPosition() - transform.position;
-                    rb2d.velocity = dir.normalized * enemy.data.moveSpeed;
-                    AdjustRotation(dir);
+                    FollowPlayer();
+                    break;
+
+                case EnemyType.Shoot:
+                    if(Vector2.Distance(enemy.player.GetPosition(), transform.position) > enemy.data.playerDistance)
+                    {
+                        FollowPlayer();
+                    }
+                    else
+                    {
+                        rb2d.velocity = Vector2.zero;
+                    }                    
                     break;
             }
+        }
+
+        private void FollowPlayer()
+        {
+            Vector2 dir = enemy.player.GetPosition() - transform.position;
+            rb2d.velocity = dir.normalized * enemy.data.moveSpeed;
+            AdjustRotation(dir);
         }
 
         private void AdjustRotation(Vector2 dir)

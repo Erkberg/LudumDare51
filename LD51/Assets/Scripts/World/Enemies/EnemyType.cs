@@ -7,6 +7,8 @@ namespace LD51
     public enum EnemyType
     {
         None,
-        Follow
+        Follow,
+        Shoot,
+        Bullet
     }
 }

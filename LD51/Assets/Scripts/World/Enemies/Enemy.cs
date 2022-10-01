@@ -10,12 +10,18 @@ namespace LD51
         public EnemyMovement move;
         public EnemyInteraction interact;
         public EnemyAnimation anim;
+        public EnemyShoot shoot;
 
         public PlayerController player;
+        public bool isDying;
 
         private void Awake()
         {
             player = Game.inst.refs.player;
+            if(data.lifetime > 0f)
+            {
+                Destroy(gameObject, data.lifetime);
+            }
         }
 
         public void Die()
@@ -25,10 +31,19 @@ namespace LD51
 
         private IEnumerator DeathSequence()
         {
-            Game.inst.progress.OnEnemyDied();
-            Game.inst.effects.EmitHearticleAtPosition(move.transform.position);
-            anim.OnDeath();
-            move.OnDeath();
+            isDying = true;
+            if(data.type != EnemyType.Bullet)
+            {
+                Game.inst.progress.OnEnemyDied();
+                Game.inst.effects.EmitHearticleAtPosition(move.transform.position);
+                move.OnDeath();
+                anim.OnDeath();
+            }        
+            else
+            {
+                anim.OnDeath(0.33f);
+            }
+                      
             yield return new WaitForSeconds(1.33f);
             Destroy(gameObject);
         }
