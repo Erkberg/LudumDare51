@@ -34,6 +34,7 @@ namespace LD51
             isDying = true;
             if(data.type != EnemyType.Bullet)
             {
+                Game.inst.audio.PlayEnemyDieSound();
                 Game.inst.progress.OnEnemyDied();
                 Game.inst.effects.EmitHearticleAtPosition(move.transform.position);
                 move.OnDeath();
@@ -41,6 +42,7 @@ namespace LD51
             }        
             else
             {
+                Game.inst.audio.PlayEnemyBulletDieSound();
                 anim.OnDeath(3.33f);
             }
                       

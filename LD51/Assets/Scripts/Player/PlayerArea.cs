@@ -41,12 +41,14 @@ namespace LD51
         private void Trigger()
         {
             Game.inst.refs.screenshake.StartShake(0.133f, 0.133f);
+            Game.inst.audio.PlayAreaTriggerSound();
             StartCoroutine(TriggerSequence());
         }
 
         public void SuperTrigger()
         {
             Game.inst.refs.screenshake.StartShake(0.25f, 0.2f);
+            Game.inst.audio.PlaySuperAreaTriggerSound();
             cooldownPassed = 0f;
             StopAllCoroutines();
             StartCoroutine(TriggerSequence(true));

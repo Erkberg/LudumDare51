@@ -34,6 +34,15 @@ namespace LD51
         {
             Enemy bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.move.rb2d.velocity = transform.right * bullet.data.moveSpeed;
+
+            if(enemy.data.type == EnemyType.Shoot)
+            {
+                Game.inst.audio.PlayEnemyBulletSound();
+            }
+            else
+            {
+                Game.inst.audio.PlayEnemyBulletWideSound();
+            }
         }
 
         private void AdjustRotation(Vector2 dir)

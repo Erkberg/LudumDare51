@@ -22,8 +22,13 @@ namespace LD51
 
             if(health <= 0)
             {
+                Game.inst.audio.PlayPlayerDieSound();
                 Die();
-            }            
+            }  
+            else
+            {
+                Game.inst.audio.PlayPlayerHurtSound();
+            }
         }
 
         private void Die()
