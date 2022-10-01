@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pc: {fileID: 444698924}
   rb2d: {fileID: 150429149}
+  coll: {fileID: 150429148}
 --- !u!114 &150429151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,3 +1658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbb630f3c1c91443aea40366a0f5dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pc: {fileID: 444698924}
+  animator: {fileID: 2143229023}
+  spriteRenderer: {fileID: 2143229022}

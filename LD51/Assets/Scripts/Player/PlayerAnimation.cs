@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ErksUnityLibrary;
 
 namespace LD51
 {
     public class PlayerAnimation : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        public PlayerController pc;
+        public Animator animator;
+        public SpriteRenderer spriteRenderer;
+
+        private void Update()
         {
-        
+            CheckInvincible();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void CheckInvincible()
         {
-        
+            spriteRenderer.SetColorA(pc.move.IsInvincible() ? 0.167f : 1f);
         }
     }
 }

@@ -21,6 +21,8 @@ namespace LD51
         {
             data = Game.inst.data;
             coll.enabled = false;
+            transform.SetScale(0f);
+            spriteRenderer.SetColorA(0f);
             baseScale = pc.anim.transform.localScale.x;
         }
 

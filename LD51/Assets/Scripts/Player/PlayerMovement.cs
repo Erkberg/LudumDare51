@@ -8,6 +8,7 @@ namespace LD51
     {
         public PlayerController pc;
         public Rigidbody2D rb2d;
+        public Collider2D coll;
 
         private GameInput input;
         private GameData data;
@@ -51,6 +52,7 @@ namespace LD51
         private IEnumerator DashSequence()
         {
             isDashing = true;
+            coll.enabled = false;
 
             float durationPassed = 0f;
             while(rb2d.velocity.magnitude > 0f && durationPassed < data.playerData.dashDuration)
@@ -59,7 +61,13 @@ namespace LD51
                 yield return null;
             }
 
+            coll.enabled = true;
             isDashing = false;
+        }
+
+        public bool IsInvincible()
+        {
+            return !coll.enabled;
         }
     }
 }
