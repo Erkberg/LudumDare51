@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bef86ed51a2f6a0459ed311ff13a76fd, type: 3}
-  m_Name: ShootEnemyData
+  m_Name: ShootWideEnemyData
   m_EditorClassIdentifier: 
-  type: 2
-  moveSpeed: 1
-  playerDistance: 5
-  shootCoolDown: 3.33
+  type: 4
+  moveSpeed: 0.67
+  playerDistance: 6.67
+  shootCoolDown: 6.67
   aimAtPlayer: 1
   lifetime: 0

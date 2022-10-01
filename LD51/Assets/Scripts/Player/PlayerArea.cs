@@ -43,7 +43,12 @@ namespace LD51
             StartCoroutine(TriggerSequence());
         }
 
-        private IEnumerator TriggerSequence()
+        public void SuperTrigger()
+        {
+            StartCoroutine(TriggerSequence(true));
+        }
+
+        private IEnumerator TriggerSequence(bool superTrigger = false)
         {
             coll.enabled = true;
             transform.SetScale(0f);

@@ -41,7 +41,7 @@ namespace LD51
             }        
             else
             {
-                anim.OnDeath(0.33f);
+                anim.OnDeath(3.33f);
             }
                       
             yield return new WaitForSeconds(1.33f);

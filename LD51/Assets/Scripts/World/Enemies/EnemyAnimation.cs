@@ -11,9 +11,9 @@ namespace LD51
         public Animator animator;
         public FadeSprite fadeSprite;
 
-        public void OnDeath(float duration = 1f)
+        public void OnDeath(float speed = 1f)
         {
-            fadeSprite.StartFade("out", false, duration, 0f);
+            fadeSprite.StartFade("out", false, speed, 0f);
         }
     }
 }

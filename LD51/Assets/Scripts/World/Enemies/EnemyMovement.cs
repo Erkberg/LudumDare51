@@ -30,7 +30,8 @@ namespace LD51
                     break;
 
                 case EnemyType.Shoot:
-                    if(Vector2.Distance(enemy.player.GetPosition(), transform.position) > enemy.data.playerDistance)
+                case EnemyType.ShootWide:
+                    if (Vector2.Distance(enemy.player.GetPosition(), transform.position) > enemy.data.playerDistance)
                     {
                         FollowPlayer();
                     }

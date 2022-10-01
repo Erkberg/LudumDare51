@@ -9,6 +9,7 @@ namespace LD51
         None,
         Follow,
         Shoot,
-        Bullet
+        Bullet,
+        ShootWide
     }
 }

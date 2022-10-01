@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef86ed51a2f6a0459ed311ff13a76fd, type: 3}
-  m_Name: ShootEnemyData
+  m_Script: {fileID: 11500000, guid: bc386fb1b1587644aa4940bc58beba0b, type: 3}
+  m_Name: LevelData_05
   m_EditorClassIdentifier: 
-  type: 2
-  moveSpeed: 1
-  playerDistance: 5
-  shootCoolDown: 3.33
-  aimAtPlayer: 1
-  lifetime: 0
+  spawnTime: 3.33
+  enemiesToNextLevel: 12
+  enemyTypes: 04000000
