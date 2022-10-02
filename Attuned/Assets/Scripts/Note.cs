@@ -20,8 +20,8 @@ namespace Attuned
         
         private const string PitchParameterPrefix = "Pitch";
         private const float BasePitch = 1f;
-        private const float PitchDeviationStep = 0.033f;
-        private const int MaxDeviationSteps = 2;
+        private const float PitchDeviationStep = 0.1f;
+        private const int MaxDeviationSteps = 1;
         private const float MinPitchDeviation = 0.01f;
         private const float MaxPitchDeviation = 0.033f;
         private const int SampleDataLength = 1024;
@@ -58,11 +58,16 @@ namespace Attuned
             audioSource.clip = clip;
         }
 
+        public void SetSliderActive(bool active)
+        {
+            slider.gameObject.SetActive(active);
+        }
+
         private void AdjustImage()
         {
             float value = 0.33f + GetAudioLoudness();
             Color color = Color.white;
-            color.a = 0.33f + GetAudioLoudness() * 8;
+            color.a = 0.2f + GetAudioLoudness() * 16;
             image.color = color;
         }
 

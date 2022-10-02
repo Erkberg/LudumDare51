@@ -1,3 +1,4 @@
+using ErksUnityLibrary;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,35 @@ namespace Attuned
                     note.SetActive(true);
                     activeNotes.Add(note);
                 }
+            }
+        }
+
+        public void TriggerWrongNotes(int amount)
+        {
+            List<Note> pickedNotes = new List<Note>();
+            Debug.Log($"change {amount} notes");
+
+            for (int i = 0; i < amount; i++)
+            {
+                Note note = activeNotes.GetRandomItem();
+                while(pickedNotes.Contains(note))
+                {
+                    note = activeNotes.GetRandomItem();
+                }
+                pickedNotes.Add(note);
+            }
+
+            foreach(Note note in pickedNotes)
+            {
+                note.RandomizeDeviation();
+            }
+        }
+
+        public void SetSlidersActive(bool active)
+        {
+            foreach (Note note in activeNotes)
+            {
+                note.SetSliderActive(active);
             }
         }
 
