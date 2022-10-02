@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4d7c7b2cb1aba46929b6e1b75af090, type: 3}
+  m_Name: LevelData_0
+  m_EditorClassIdentifier: 
+  id: 0
+  changedPerTick: 1
+  noteData:
+  - id: 1
+    clip: {fileID: 8300000, guid: 975bb97e4f58955418e1938905e5ff2e, type: 3}
+  - id: 2
+    clip: {fileID: 8300000, guid: 524c840ce1ede5046a969f8eaeff300b, type: 3}
+  - id: 3
+    clip: {fileID: 8300000, guid: edf510d16e4844e4fb7c33efd92e0df4, type: 3}
+  - id: 4
+    clip: {fileID: 8300000, guid: 2753073229997b9419d7c98edb650a85, type: 3}
+  - id: 5
+    clip: {fileID: 8300000, guid: a310856f6bfae4546b669efdb36fefea, type: 3}

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace InTune
+namespace Attuned
 {
     public class Note : MonoBehaviour
     {
         public Id id;
         public AudioSource audioSource;
+        public CanvasGroup canvasGroup;
         public Image image;
         public Slider slider;
         public int deviation;
@@ -32,7 +33,29 @@ namespace InTune
 
         private void Update()
         {
-            AdjustImage();
+            if(audioSource.isPlaying)
+            {
+                AdjustImage();
+            }            
+        }
+
+        public void SetActive(bool active)
+        {
+            if(active)
+            {
+                audioSource.Play();
+                canvasGroup.alpha = 1f;
+            }
+            else
+            {
+                audioSource.Stop();
+                canvasGroup.alpha = 0f;
+            }
+        }
+
+        public void SetClip(AudioClip clip)
+        {
+            audioSource.clip = clip;
         }
 
         private void AdjustImage()
@@ -108,6 +131,11 @@ namespace InTune
             audioSource.outputAudioMixerGroup.audioMixer.SetFloat(PitchParameterPrefix + id, value);
         }
 
+        public bool IsWrong()
+        {
+            return deviation + sliderDeviation != 0;
+        }
+
         public enum Id
         {
             None,
@@ -115,7 +143,17 @@ namespace InTune
             MidA,
             MidB,
             MidD,
-            MidE
+            MidE,
+            LowG,
+            LowA,
+            LowB,
+            LowD,
+            LowE,
+            HighG,
+            HighA,
+            HighB,
+            HighD,
+            HighE
         }
     }
 }
