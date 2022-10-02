@@ -271,6 +271,7 @@ MonoBehaviour:
   audioSource: {fileID: 6113060069302220459}
   canvasGroup: {fileID: 2235816875080103319}
   buttonImage: {fileID: 6113060069821762211}
+  button: {fileID: 6113060069821762212}
   baseColor: {r: 0.22352943, g: 0.2901961, b: 0.3137255, a: 1}
   neutralColor: {r: 0.9215687, g: 0.9294118, b: 0.91372555, a: 1}
   correctColor: {r: 0.27450982, g: 0.50980395, b: 0.19607845, a: 1}
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113060069821762214}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 

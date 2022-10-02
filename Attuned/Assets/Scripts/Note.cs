@@ -12,6 +12,7 @@ namespace Attuned
         public CanvasGroup canvasGroup;
         [Space]
         public Image buttonImage;
+        public Button button;
         public Color baseColor;
         public Color neutralColor;
         public Color correctColor;
@@ -28,10 +29,9 @@ namespace Attuned
         private const float BasePitch = 1f;
         private const float PitchDeviationStep = 0.1f;
         private const int MaxDeviationSteps = 1;
-        private const float MinPitchDeviation = 0.01f;
-        private const float MaxPitchDeviation = 0.033f;
         private const int SampleDataLength = 1024;
         private const float LoudnessMultiplier = 24f;
+        private const float CorrectVolumeValue = 0.67f;
 
         private void Awake()
         {
@@ -43,6 +43,7 @@ namespace Attuned
             if(audioSource.isPlaying)
             {
                 AdjustImage();
+                AdjustVolume();
             }            
         }
 
@@ -82,6 +83,11 @@ namespace Attuned
             float loudness = GetAudioLoudness() * LoudnessMultiplier;
             Color color = Color.Lerp(baseColor, targetColor, loudness);
             buttonImage.color = color;
+        }
+
+        private void AdjustVolume()
+        {
+            audioSource.volume = IsWrong() ? 1f : CorrectVolumeValue;
         }
 
         private float GetAudioLoudness()
@@ -125,17 +131,19 @@ namespace Attuned
 
         public void OnClicked()
         {
-            if(GetPitch() == BasePitch)
+            if (Game.inst.levels.IsListening())
+                return;
+
+            if(deviation == 0)
             {
-                float deviation = Random.Range(MinPitchDeviation, MaxPitchDeviation);
-                if (Random.value < 0.5f)
-                    deviation *= -1;
-                SetPitch(BasePitch + deviation);
+                RandomizeDeviation();
             }
             else
             {
-                SetPitch(BasePitch);
+                deviation = 0;
             }
+
+            UpdatePitch();
         }
 
         private void UpdatePitch()

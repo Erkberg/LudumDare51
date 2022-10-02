@@ -31,7 +31,7 @@ namespace Attuned
         {
             List<Note> pickedNotes = new List<Note>();
             Debug.Log($"change {data.changedPerTick} notes");
-            int amount = firstTime ? data.changedPerTick : Random.Range(1, data.changedPerTick + 1);
+            int amount = firstTime ? data.changedPerTick : Random.Range(0, data.changedPerTick + 1);
             
             // tune one correctly again if at max
             if(GetWrongNotesAmount() >= data.maxWrong)
@@ -66,6 +66,9 @@ namespace Attuned
 
         public void SetSlidersActive(bool active)
         {
+            if (active && !Game.inst.hardMode)
+                return;
+
             foreach (Note note in activeNotes)
             {
                 note.SetSliderActive(active);

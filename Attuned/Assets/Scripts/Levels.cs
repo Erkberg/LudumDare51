@@ -77,9 +77,9 @@ namespace Attuned
             }                
         }
 
-        private void Update()
+        public bool IsListening()
         {
-            
+            return ticksThisLevel == 0;
         }
     }
 }

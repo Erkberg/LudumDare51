@@ -46,6 +46,15 @@ namespace Attuned
 
         public void OnStartButtonClicked()
         {
+            Game.inst.hardMode = false;
+            titleScreen.SetActive(false);
+            ingameUi.SetActive(true);
+            Game.inst.OnStartGame();
+        }
+
+        public void OnStartHardButtonClicked()
+        {
+            Game.inst.hardMode = true;
             titleScreen.SetActive(false);
             ingameUi.SetActive(true);
             Game.inst.OnStartGame();
