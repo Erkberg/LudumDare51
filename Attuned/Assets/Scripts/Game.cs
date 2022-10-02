@@ -14,6 +14,7 @@ namespace Attuned
         public Timer timer;
         public Levels levels;
         public Notes notes;
+        public Settings settings;
         public Screenshake screenshake;
 
         private void Awake()

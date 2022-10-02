@@ -270,7 +270,11 @@ MonoBehaviour:
   id: 0
   audioSource: {fileID: 6113060069302220459}
   canvasGroup: {fileID: 2235816875080103319}
-  image: {fileID: 6113060069821762211}
+  buttonImage: {fileID: 6113060069821762211}
+  baseColor: {r: 0.22352943, g: 0.2901961, b: 0.3137255, a: 1}
+  neutralColor: {r: 0.9215687, g: 0.9294118, b: 0.91372555, a: 1}
+  correctColor: {r: 0.27450982, g: 0.50980395, b: 0.19607845, a: 1}
+  wrongColor: {r: 0.64705884, g: 0.18823531, b: 0.18823531, a: 1}
   slider: {fileID: 1972769074798226316}
   deviation: 0
   sliderDeviation: 0
@@ -454,7 +458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113060069821762214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -562,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7803922, g: 0.8117648, b: 0.8000001, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -638,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9215687, g: 0.9294118, b: 0.91372555, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -740,6 +744,6 @@ CanvasGroup:
   m_GameObject: {fileID: 8868473311205299121}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

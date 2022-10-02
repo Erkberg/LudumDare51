@@ -10,7 +10,13 @@ namespace Attuned
         public Id id;
         public AudioSource audioSource;
         public CanvasGroup canvasGroup;
-        public Image image;
+        [Space]
+        public Image buttonImage;
+        public Color baseColor;
+        public Color neutralColor;
+        public Color correctColor;
+        public Color wrongColor;
+        [Space]
         public Slider slider;
         public int deviation;
         public int sliderDeviation;
@@ -25,6 +31,7 @@ namespace Attuned
         private const float MinPitchDeviation = 0.01f;
         private const float MaxPitchDeviation = 0.033f;
         private const int SampleDataLength = 1024;
+        private const float LoudnessMultiplier = 24f;
 
         private void Awake()
         {
@@ -45,11 +52,13 @@ namespace Attuned
             {
                 audioSource.Play();
                 canvasGroup.alpha = 1f;
+                canvasGroup.interactable = true;
             }
             else
             {
                 audioSource.Stop();
                 canvasGroup.alpha = 0f;
+                canvasGroup.interactable = false;
             }
         }
 
@@ -65,10 +74,15 @@ namespace Attuned
 
         private void AdjustImage()
         {
-            float value = 0.33f + GetAudioLoudness();
-            Color color = Color.white;
-            color.a = 0.2f + GetAudioLoudness() * 16;
-            image.color = color;
+            Color targetColor = neutralColor;
+            if(Game.inst.settings.wrongNotesColorEnabled)
+            {
+                targetColor = IsWrong() ? wrongColor : correctColor;
+            }
+            float loudness = GetAudioLoudness() * LoudnessMultiplier;
+            Color color = Color.Lerp(baseColor, targetColor, loudness);
+            buttonImage.color = color;
+            Debug.Log(GetAudioLoudness());
         }
 
         private float GetAudioLoudness()

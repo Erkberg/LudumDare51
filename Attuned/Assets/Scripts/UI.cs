@@ -24,7 +24,14 @@ namespace Attuned
 
         public void UpdateWrongNotesText()
         {
-            wrongNotesText.text = Game.inst.notes.GetWrongNotesAmount().ToString();
+            if(Game.inst.settings.wrongNotesAmountEnabled)
+            {
+                wrongNotesText.text = Game.inst.notes.GetWrongNotesAmount().ToString();
+            }
+            else
+            {
+                wrongNotesText.text = string.Empty;
+            }
         }
 
         public void SetTimerText(float value)
@@ -37,6 +44,16 @@ namespace Attuned
             titleScreen.SetActive(false);
             ingameUi.SetActive(true);
             Game.inst.OnStartGame();
+        }
+
+        public void OnWrongAmountToggle(bool value)
+        {
+            Game.inst.settings.wrongNotesAmountEnabled = value;
+        }
+
+        public void OnWrongColorToggle(bool value)
+        {
+            Game.inst.settings.wrongNotesColorEnabled = value;
         }
     }
 }
