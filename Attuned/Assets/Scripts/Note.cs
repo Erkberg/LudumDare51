@@ -44,6 +44,7 @@ namespace Attuned
             {
                 AdjustImage();
                 AdjustVolume();
+                AdjustButton();
             }            
         }
 
@@ -90,6 +91,11 @@ namespace Attuned
             audioSource.volume = IsWrong() ? 1f : CorrectVolumeValue;
         }
 
+        private void AdjustButton()
+        {
+            button.interactable = !Game.inst.levels.IsListening();
+        }
+
         private float GetAudioLoudness()
         {
             audioSource.clip.GetData(clipSampleData, audioSource.timeSamples);
@@ -131,9 +137,6 @@ namespace Attuned
 
         public void OnClicked()
         {
-            if (Game.inst.levels.IsListening())
-                return;
-
             if(deviation == 0)
             {
                 RandomizeDeviation();
