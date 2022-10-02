@@ -43,7 +43,10 @@ namespace Attuned
 
         private void TriggerWrongNotes(bool firstTime)
         {
-            Game.inst.notes.TriggerWrongNotes(levels[currentLevel], firstTime);
+            if(Game.inst.IsIngame())
+            {
+                Game.inst.notes.TriggerWrongNotes(levels[currentLevel], firstTime);
+            }            
         }
 
         private bool CheckLevelFinished()
@@ -81,6 +84,11 @@ namespace Attuned
         public bool IsListening()
         {
             return ticksThisLevel == 0;
+        }
+
+        public float GetUntunedPercentage()
+        {
+            return (float)Game.inst.notes.GetWrongNotesAmount() / levels[currentLevel].maxWrong;
         }
     }
 }

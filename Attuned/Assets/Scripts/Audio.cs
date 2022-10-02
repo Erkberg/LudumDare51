@@ -7,6 +7,7 @@ namespace Attuned
     public class Audio : MonoBehaviour
     {
         public List<AudioSource> supportSources;
+        public AudioSource endSource;
 
         public void StartSupportSource(int id)
         {
@@ -14,6 +15,15 @@ namespace Attuned
             {
                 supportSources[id].Play();
             }            
+        }
+
+        public void OnEnd()
+        {
+            foreach(AudioSource source in supportSources)
+            {
+                source.Stop();
+            }
+            endSource.Play();
         }
     }
 }

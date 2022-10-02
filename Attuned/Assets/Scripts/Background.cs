@@ -10,6 +10,10 @@ namespace Attuned
 
         public Color listeningBackgroundColor;
         public Color tuningBackgroundColor;
+        public Color tuningBackgroundColorBad;
+        public Color tuningBackgroundColorVeryBad;
+
+        private Color targetTuningColor;
 
         private void Update()
         {
@@ -20,7 +24,24 @@ namespace Attuned
         {
             if(Game.inst.IsIngame())
             {
-                mainCam.backgroundColor = Game.inst.levels.IsListening() ? listeningBackgroundColor : tuningBackgroundColor;
+                if(Game.inst.levels.IsListening())
+                {
+                    mainCam.backgroundColor = listeningBackgroundColor;
+                }
+                else
+                {
+                    float percentage = Game.inst.levels.GetUntunedPercentage();
+                    if(percentage > 1f)
+                    {
+                        targetTuningColor = Color.Lerp(tuningBackgroundColorBad, tuningBackgroundColorVeryBad, percentage - 1f);
+                    }
+                    else
+                    {
+                        targetTuningColor = Color.Lerp(tuningBackgroundColor, tuningBackgroundColorBad, percentage);
+                    }
+                    
+                    mainCam.backgroundColor = Color.Lerp(mainCam.backgroundColor, targetTuningColor, 0.00133f);
+                }
             }            
         }
     }

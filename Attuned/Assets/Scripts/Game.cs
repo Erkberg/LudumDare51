@@ -2,6 +2,7 @@ using ErksUnityLibrary;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Attuned
 {
@@ -33,12 +34,20 @@ namespace Attuned
 
         public void OnGameEnd()
         {
-            Debug.Log("all levels finished");
+            state = State.End;
+            timer.ResetTimer();
+            timer.SetPaused(true);
+            ui.OnEnd();
         }
 
         public bool IsIngame()
         {
             return state == State.Ingame;
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void OnTimeChanged(float value)

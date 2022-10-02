@@ -10,6 +10,7 @@ namespace Attuned
     {
         public GameObject titleScreen;
         public GameObject ingameUi;
+        public GameObject endScreen;
 
         public TextMeshProUGUI timerText;
         public TextMeshProUGUI wrongNotesText;
@@ -83,6 +84,18 @@ namespace Attuned
         public void OnTimeScaleSlider(float value)
         {
             Game.inst.OnTimeChanged(value);
+        }
+
+        public void OnEnd()
+        {
+            ingameUi.SetActive(false);
+            endScreen.SetActive(true);
+            Game.inst.audio.OnEnd();
+        }
+
+        public void OnRestartButtonClicked()
+        {
+            Game.inst.Restart();
         }
     }
 }
