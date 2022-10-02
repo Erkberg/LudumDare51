@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4d7c7b2cb1aba46929b6e1b75af090, type: 3}
   m_Name: LevelData_1_2
   m_EditorClassIdentifier: 
-  id: 0
   name: Mid II
   changedPerTick: 2
   maxWrong: 3
+  supportInstrumentId: 0
   duration: 10
   noteData:
   - id: 1

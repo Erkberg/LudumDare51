@@ -72,8 +72,9 @@ namespace Attuned
             {
                 Game.inst.notes.InitLevel(levels[currentLevel]);
                 Game.inst.ui.SetStateText(false);
-                Game.inst.ui.SetLevelText(levels[currentLevel].name);
+                Game.inst.ui.SetLevelText(levels[currentLevel].name);                
                 Game.inst.notes.SetSlidersActive(false);
+                Game.inst.audio.StartSupportSource(levels[currentLevel].supportInstrumentId);
             }                
         }
 

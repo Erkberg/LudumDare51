@@ -16,6 +16,7 @@ namespace Attuned
         public Notes notes;
         public Settings settings;
         public Screenshake screenshake;
+        public new Audio audio;
         public bool hardMode;
 
         private void Awake()
