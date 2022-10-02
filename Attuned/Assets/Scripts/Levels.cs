@@ -54,7 +54,7 @@ namespace Attuned
             int wrongNotesAmount = Game.inst.notes.GetWrongNotesAmount();
             if(wrongNotesAmount == 0)
             {
-                Debug.Log("finished level " + currentLevel);
+                //Debug.Log("finished level " + currentLevel);
                 StartNextLevel();
                 return true;
             }

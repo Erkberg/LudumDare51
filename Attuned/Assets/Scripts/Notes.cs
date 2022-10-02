@@ -30,7 +30,7 @@ namespace Attuned
         public void TriggerWrongNotes(LevelData data, bool firstTime)
         {
             List<Note> pickedNotes = new List<Note>();
-            Debug.Log($"change {data.changedPerTick} notes");
+            //Debug.Log($"change {data.changedPerTick} notes");
             int amount = firstTime ? data.changedPerTick : Random.Range(0, data.changedPerTick + 1);
             
             // tune one correctly again if at max
