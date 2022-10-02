@@ -160,6 +160,11 @@ namespace Attuned
             return deviation + sliderDeviation != 0;
         }
 
+        public void SetAsPitch(float value)
+        {
+            audioSource.pitch = value;
+        }
+
         public enum Id
         {
             None,

@@ -1,6 +1,7 @@
 using ErksUnityLibrary;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Attuned
@@ -26,11 +27,11 @@ namespace Attuned
             }
         }
 
-        public void TriggerWrongNotes(LevelData data)
+        public void TriggerWrongNotes(LevelData data, bool firstTime)
         {
             List<Note> pickedNotes = new List<Note>();
             Debug.Log($"change {data.changedPerTick} notes");
-            int amount = data.changedPerTick;
+            int amount = firstTime ? data.changedPerTick : Random.Range(1, data.changedPerTick + 1);
             
             // tune one correctly again if at max
             if(GetWrongNotesAmount() >= data.maxWrong)
@@ -97,6 +98,14 @@ namespace Attuned
                 }
             }
             return wrongNotes.GetRandomItem();
+        }
+
+        public void SetPitchAll(float value)
+        {
+            foreach (Note note in allNotes)
+            {
+                note.SetAsPitch(value);
+            }
         }
     }
 }

@@ -70,5 +70,10 @@ namespace Attuned
         {
             levelText.text = text;
         }
+
+        public void OnTimeScaleSlider(float value)
+        {
+            Game.inst.OnTimeChanged(value);
+        }
     }
 }

@@ -30,20 +30,20 @@ namespace Attuned
                 bool finished = CheckLevelFinished();
                 if(!finished)
                 {
-                    TriggerWrongNotes();
+                    TriggerWrongNotes(false);
                 }
             }
             else if(ticksThisLevel == 1)
             {
                 Game.inst.ui.SetStateText(true);
                 Game.inst.notes.SetSlidersActive(true);
-                TriggerWrongNotes();
+                TriggerWrongNotes(true);
             }
         }
 
-        private void TriggerWrongNotes()
+        private void TriggerWrongNotes(bool firstTime)
         {
-            Game.inst.notes.TriggerWrongNotes(levels[currentLevel]);
+            Game.inst.notes.TriggerWrongNotes(levels[currentLevel], firstTime);
         }
 
         private bool CheckLevelFinished()

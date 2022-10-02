@@ -39,6 +39,12 @@ namespace Attuned
             return state == State.Ingame;
         }
 
+        public void OnTimeChanged(float value)
+        {
+            Time.timeScale = value;
+            notes.SetPitchAll(value);
+        }
+
         public enum State
         {
             None,
