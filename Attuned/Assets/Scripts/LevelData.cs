@@ -7,7 +7,6 @@ namespace Attuned
     [CreateAssetMenu]
     public class LevelData : ScriptableObject
     {
-        public int id;
         public new string name;
         public int changedPerTick = 1;
         public int maxWrong = 2;
