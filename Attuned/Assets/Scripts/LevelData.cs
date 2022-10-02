@@ -8,7 +8,9 @@ namespace Attuned
     public class LevelData : ScriptableObject
     {
         public int id;
+        public new string name;
         public int changedPerTick = 1;
+        public int maxWrong = 2;
         public float duration = 10f;
         public List<NoteData> noteData;
 

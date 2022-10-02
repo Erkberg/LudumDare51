@@ -26,10 +26,26 @@ namespace Attuned
             }
         }
 
-        public void TriggerWrongNotes(int amount)
+        public void TriggerWrongNotes(LevelData data)
         {
             List<Note> pickedNotes = new List<Note>();
-            Debug.Log($"change {amount} notes");
+            Debug.Log($"change {data.changedPerTick} notes");
+            int amount = data.changedPerTick;
+            
+            // tune one correctly again if at max
+            if(GetWrongNotesAmount() >= data.maxWrong)
+            {
+                GetRandomWrongNote().SetDeviationTuned();
+                return;
+            }
+            else
+            {
+                // or cap limit
+                while (amount + GetWrongNotesAmount() > data.maxWrong)
+                {
+                    amount--;
+                }
+            }
 
             for (int i = 0; i < amount; i++)
             {
@@ -68,6 +84,19 @@ namespace Attuned
             }
 
             return amount;
+        }
+
+        public Note GetRandomWrongNote()
+        {
+            List<Note> wrongNotes = new List<Note>();
+            foreach (Note note in activeNotes)
+            {
+                if (note.IsWrong())
+                {
+                    wrongNotes.Add(note);
+                }
+            }
+            return wrongNotes.GetRandomItem();
         }
     }
 }

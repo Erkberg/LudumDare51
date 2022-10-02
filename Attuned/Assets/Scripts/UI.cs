@@ -13,6 +13,11 @@ namespace Attuned
 
         public TextMeshProUGUI timerText;
         public TextMeshProUGUI wrongNotesText;
+        public TextMeshProUGUI stateText;
+        public TextMeshProUGUI levelText;
+
+        private const string ListeningStateText = "Listening ...";
+        private const string TuningStateText = "Tuning ...";
 
         private void Update()
         {
@@ -54,6 +59,16 @@ namespace Attuned
         public void OnWrongColorToggle(bool value)
         {
             Game.inst.settings.wrongNotesColorEnabled = value;
+        }
+
+        public void SetStateText(bool tuning)
+        {
+            stateText.text = tuning ? TuningStateText : ListeningStateText;
+        }
+
+        public void SetLevelText(string text)
+        {
+            levelText.text = text;
         }
     }
 }

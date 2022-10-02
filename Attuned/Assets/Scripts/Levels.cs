@@ -35,6 +35,7 @@ namespace Attuned
             }
             else if(ticksThisLevel == 1)
             {
+                Game.inst.ui.SetStateText(true);
                 Game.inst.notes.SetSlidersActive(true);
                 TriggerWrongNotes();
             }
@@ -42,7 +43,7 @@ namespace Attuned
 
         private void TriggerWrongNotes()
         {
-            Game.inst.notes.TriggerWrongNotes(levels[currentLevel].changedPerTick);
+            Game.inst.notes.TriggerWrongNotes(levels[currentLevel]);
         }
 
         private bool CheckLevelFinished()
@@ -65,11 +66,13 @@ namespace Attuned
 
             if (currentLevel >= levels.Count)
             {
-                Debug.Log("all levels finished");
+                Game.inst.OnGameEnd();
             }
             else
             {
                 Game.inst.notes.InitLevel(levels[currentLevel]);
+                Game.inst.ui.SetStateText(false);
+                Game.inst.ui.SetLevelText(levels[currentLevel].name);
                 Game.inst.notes.SetSlidersActive(false);
             }                
         }

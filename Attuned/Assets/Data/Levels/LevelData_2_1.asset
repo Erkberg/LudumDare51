@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed4d7c7b2cb1aba46929b6e1b75af090, type: 3}
-  m_Name: LevelData_0
+  m_Name: LevelData_2_1
   m_EditorClassIdentifier: 
   id: 0
+  name: Low I
   changedPerTick: 1
+  maxWrong: 2
+  duration: 10
   noteData:
   - id: 1
     clip: {fileID: 8300000, guid: 975bb97e4f58955418e1938905e5ff2e, type: 3}
@@ -25,3 +28,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2753073229997b9419d7c98edb650a85, type: 3}
   - id: 5
     clip: {fileID: 8300000, guid: a310856f6bfae4546b669efdb36fefea, type: 3}
+  - id: 6
+    clip: {fileID: 8300000, guid: e4e751cc877ddf245aea201d58c4a924, type: 3}
+  - id: 7
+    clip: {fileID: 8300000, guid: 9036c4eec1e5b674491e8d352c0c0db5, type: 3}
+  - id: 8
+    clip: {fileID: 8300000, guid: 5003b1f9cd401344d853d66f5cecea96, type: 3}
+  - id: 9
+    clip: {fileID: 8300000, guid: 11481d9559feb924ab689ae17cbbe3d2, type: 3}
+  - id: 10
+    clip: {fileID: 8300000, guid: c1de948d928aa324ab0155719c510e9a, type: 3}

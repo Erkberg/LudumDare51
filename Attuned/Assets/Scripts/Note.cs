@@ -82,7 +82,6 @@ namespace Attuned
             float loudness = GetAudioLoudness() * LoudnessMultiplier;
             Color color = Color.Lerp(baseColor, targetColor, loudness);
             buttonImage.color = color;
-            Debug.Log(GetAudioLoudness());
         }
 
         private float GetAudioLoudness()
@@ -109,6 +108,12 @@ namespace Attuned
             {
                 deviation *= -1;
             }
+            UpdatePitch();
+        }
+
+        public void SetDeviationTuned()
+        {
+            deviation = -sliderDeviation;
             UpdatePitch();
         }
 

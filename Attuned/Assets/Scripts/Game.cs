@@ -29,6 +29,11 @@ namespace Attuned
             levels.OnStartGame();
         }
 
+        public void OnGameEnd()
+        {
+            Debug.Log("all levels finished");
+        }
+
         public bool IsIngame()
         {
             return state == State.Ingame;
